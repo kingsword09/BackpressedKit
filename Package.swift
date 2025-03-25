@@ -18,9 +18,9 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(name: "EdgeAnimationView"),
+        .target(name: "BackpressedUI"),
         .target(
-            name: "BackpressedKit", dependencies: ["EdgeAnimationView"]
+            name: "BackpressedKit", dependencies: ["BackpressedUI"]
         ),
         .testTarget(
             name: "BackpressedKitTests",
