@@ -8,7 +8,7 @@
 import UIKit
 
 // @see: https://github.com/BioforestChain/dweb_browser/blob/6dcb4b14e6f394ca015cf01925b2c4ac8afb494d/next/kmp/app/iosApp/DwebBrowser/DwebBrowser/Desktop/EdgeAnimationView.swift#L11
-class EdgeAnimationView: UIView {
+public class EdgeAnimationView: UIView {
     var edge: UIRectEdge = .left
     var triggerAction: () -> Void = {}
 
@@ -22,7 +22,7 @@ class EdgeAnimationView: UIView {
     private let iconView = UIImageView(frame: .zero)
     private var cachedPaths = [CGPath]()
     
-    init(frame: CGRect, rectEdge: UIRectEdge, trigger: @escaping () -> Void) {
+    public init(frame: CGRect, rectEdge: UIRectEdge, trigger: @escaping () -> Void) {
         super.init(frame: frame)
         edge = rectEdge
         generateCachedPaths()
@@ -63,7 +63,7 @@ class EdgeAnimationView: UIView {
         }
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
 
         drawShapeLayer()
@@ -94,7 +94,7 @@ class EdgeAnimationView: UIView {
         }
     }
     
-    @objc func handlePanGesture(_ sender: UIPanGestureRecognizer) {
+    @objc public func handlePanGesture(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: superview)
         
         switch sender.state {
